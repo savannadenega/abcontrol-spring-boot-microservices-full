@@ -1,8 +1,8 @@
 language: java
 jdk:
- - oraclejdk8
+- oraclejdk8
 deploy:
- provider: heroku
- api-key: 
-  secure: $HEROKU_API_KEY
- app: abcontrol-spring-boot-microser
+  provider: heroku
+  api-key:
+    secure: jf3fCW1ppXlLc0cMSpcqxiFR6G2xoMYLWEEy+NWIruQ5/PDssfA/nln08AyqP2HkiLTNxcFKT+4KTcvib65b3a4E6W1yxu2DNMSDNwke3U/3Lo7wl0CW+8PhZftw1ASLKN10d+uSALWW1jg0vipmdqmbpEjfjlZd3xLZdUPAlBi5+Myn90tYzOS6ncoNSKuumOWDDQ4lwwHOlhnsyJDMOeKzEZ82qNIkMgyhR0Jjs+dDUrh0jslohHVymxAHjYstPVSk2F5cYa2ysOgmTEd+1DyKU5RZTSH8PB5z9c2/MEqe+2xkbMsyygUBw8dHQ3ZrkDrhE9h9S8B+2R2+zceFmZEsUl62xcvDW+c/jMD4R0DDEiXCTGZPVfS0UYG4AKZZ8LXorHZxfQhV6PmNTs6Z3keLQUWShdKhY3CX5C++qgWrGxRI32btNEVRAiOuP3pkybzNZV2f6V7Fu0fWHJYIswbWDUBGfZdKg4d5Wv+EP4iyNvcOGYSl1SNLTe/oIbnFcWPS1Hb9YsYjtiTRNGijrVzVvSnwV158grPBmQhjsal6VIR+nmThjRdO6sD3rWn7RLVyjYtTHQ2D8k/3Rm8ll7s4geAFXPvpOrb6TKOCfHAqFOx6zcZRJSx0KIMZFzPQmaEBci3tBgQAuiIInbaEsPBO1ycQldbXse67jJAZptg=
+  app: abcontrol-spring-boot-microser
