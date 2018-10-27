@@ -1,6 +1,6 @@
+/*import com.abcontrol.Entity.Material;
 
-import com.abcontrol.Dao.TarefaDao;
-import com.abcontrol.Entity.Tarefa;
+import com.abcontrol.Repository.MaterialRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,10 +8,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.*;
@@ -26,10 +22,10 @@ public class TarefaTeste{
 
     @Test
     public void testarGetTarefaById(){
-        TarefaDao tarefaDaoMock = mock(TarefaDao.class);
-        when(tarefaDaoMock.getTarefaById(0)).thenReturn(new Tarefa(0, "Gerar relatório projetos", "Gerar relatório de todos os projetos em execução hoje", "Alta", "Em construção", "01/01/2018", "12/12/2018", "Savanna Denega", "Material 1", "Sem Anexo" ));
+        MaterialRepository materialMock = mock(MaterialRepository.class);
+        when(materialMock.getTarefaById(0)).thenReturn(new Material(0, "Gerar relatório projetos", "Gerar relatório de todos os projetos em execução hoje", "Alta", "Em construção", "01/01/2018", "12/12/2018", "Savanna Denega", "Material 1", "Sem Anexo" ));
 
-        Tarefa tarefa = tarefaDaoMock.getTarefaById(0);
+        Tarefa tarefa = materialMock.getTarefaById(0);
         Assert.assertEquals(0, tarefa.getId());
         Assert.assertEquals("Gerar relatório projetos", tarefa.getNome());
         Assert.assertEquals("Gerar relatório de todos os projetos em execução hoje", tarefa.getDescricao());
@@ -41,7 +37,7 @@ public class TarefaTeste{
         Assert.assertEquals("Material 1", tarefa.getMaterial());
         Assert.assertEquals("Sem Anexo", tarefa.getAnexo());
 
-        verify(tarefaDaoMock, Mockito.atLeastOnce()).getTarefaById(0);
+        verify(materialMock, Mockito.atLeastOnce()).getTarefaById(0);
     }
 
     @Test
@@ -54,4 +50,4 @@ public class TarefaTeste{
         verify(tarefaDaoMock, Mockito.atLeastOnce()).removeTarefaById(0);
     }
 
-}
+}*/
