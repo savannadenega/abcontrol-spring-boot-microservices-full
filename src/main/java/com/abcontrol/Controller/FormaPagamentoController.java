@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author FrancieleNF
- */
-
 @RestController
 @RequestMapping(value="/api")
 public class FormaPagamentoController {
