@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // reconhece os beans
 // reconhece todas as configurações das anotações
 @SpringBootApplication
-
-
 public class Main{
 
     public static void main(String[] args) {

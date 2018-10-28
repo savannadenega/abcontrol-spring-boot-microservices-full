@@ -1,4 +1,4 @@
-package com.abcontrol.Entity;
+package com.abcontrol.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,7 +13,6 @@ public class Material implements Serializable {
 
     @NotNull //não aceita valores em branco
     private String nomeMaterial;
-
     private String descricaoMaterial;
     private String tipoMaterial;
     private double valorUnidade;

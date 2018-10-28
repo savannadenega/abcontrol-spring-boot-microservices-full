@@ -1,48 +1,48 @@
-package com.abcontrol.Controller;
+package com.abcontrol.controller;
 
 
-import com.abcontrol.Entity.FormaPagamento;
-import com.abcontrol.Repository.FormaPagamentoRepository;
+import com.abcontrol.entity.FormaPagamento;
+import com.abcontrol.repository.FormaPagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping(value="/formaPagamento")
 public class FormaPagamentoController {
 
     @Autowired//injeção de dependencias com
     private FormaPagamentoRepository pagamentoRepository;
 
     //Listar todos os matériais
-    @GetMapping("/formaPagamento")
+    @GetMapping
     public List<FormaPagamento> listaFormaPagamentos() {
         return pagamentoRepository.findAll();
 
     }
 
     //Lista por ID
-    @GetMapping("/formaPagamento/{id}")
+    @GetMapping("/{id}")
     public FormaPagamento listaFormaPagamentoPorId(@PathVariable(value = "id") long id) {
         return pagamentoRepository.findById(id);
     }
 
 
     // Cadastrar material
-    @PostMapping("/formaPagamento")
+    @PostMapping
     public FormaPagamento cadastraFormaPagamento(@RequestBody FormaPagamento formaPagamento) {
         return pagamentoRepository.save(formaPagamento);
     }
 
     //Atualizar material
-    @PutMapping("formaPagamento")
+    @PutMapping
     public FormaPagamento atualizaFormaPagamento(@RequestBody FormaPagamento formaPagamento){
         return pagamentoRepository.save(formaPagamento);
     }
 
     //Excluir material
-    @DeleteMapping("/formaPagamento")
+    @DeleteMapping
     public void excluiFormaPagamento(@RequestBody FormaPagamento formaPagamento) {
         pagamentoRepository.delete(formaPagamento);
     }

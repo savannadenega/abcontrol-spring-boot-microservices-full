@@ -1,4 +1,8 @@
 
+# Mac
+
+.DS_Store
+
 ### IntelliJ ###
 
 .idea/

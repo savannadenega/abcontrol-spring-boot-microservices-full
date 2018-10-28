@@ -1,4 +1,4 @@
-package com.abcontrol.Entity;
+package com.abcontrol.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

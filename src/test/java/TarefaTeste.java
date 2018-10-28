@@ -1,6 +1,6 @@
-/*import com.abcontrol.Entity.Material;
+/*import com.abcontrol.entity.Material;
 
-import com.abcontrol.Repository.MaterialRepository;
+import com.abcontrol.repository.MaterialRepository;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "4e0c0f1a-3c70-4a27-b0dc-1ed70982f199",
+		"name": "abcontrol-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "formaPagamento",
+			"item": [
+				{
+					"name": "localhost:8080/formaPagamento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/formaPagamento/2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/formaPagamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"2x - MasterCard\",\n\t\"valorPagamento\":200.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/formaPagamento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/formaPagamento",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "material",
+			"item": [
+				{
+					"name": "localhost:8080/material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/material/17",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/material",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/material",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 17,\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão Novo\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/material",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 17,\n    \"nomeMaterial\": \"Cimento\",\n    \"descricaoMaterial\": \"Cimento Padrão Novo\",\n    \"tipoMaterial\": \"Contrução\",\n    \"valorUnidade\": 50\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
