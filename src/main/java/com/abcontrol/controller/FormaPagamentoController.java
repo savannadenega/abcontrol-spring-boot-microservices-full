@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/formaPagamento")
+@RequestMapping(value="/formapagamento")
 public class FormaPagamentoController {
 
     @Autowired//injeção de dependencias com
@@ -23,7 +23,7 @@ public class FormaPagamentoController {
     }
 
     //Lista por ID
-    @GetMapping("/{id}")
+    @GetMapping("{/id}")
     public FormaPagamento listaFormaPagamentoPorId(@PathVariable(value = "id") long id) {
         return pagamentoRepository.findById(id);
     }

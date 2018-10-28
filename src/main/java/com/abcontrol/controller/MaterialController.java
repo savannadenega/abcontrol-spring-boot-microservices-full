@@ -47,6 +47,3 @@ public class MaterialController {
         materialRepository.delete(material);
     }
 }
-
-
-

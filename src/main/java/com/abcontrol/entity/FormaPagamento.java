@@ -1,3 +1,4 @@
+
 package com.abcontrol.entity;
 
 import javax.persistence.*;
@@ -60,8 +61,7 @@ public class FormaPagamento implements Serializable {
     }
 
     public void setValorPagamento(double valorPagamento) {
-        this.formaPagamento = formaPagamento;
+        this.valorPagamento = valorPagamento;
     }
-
 }
 
