@@ -41,9 +41,9 @@ public class MaterialController {
         return materialRepository.save(material);
     }
 
-    //Excluir material
-    @DeleteMapping
-    public void excluiMaterial(@RequestBody Material material) {
-        materialRepository.delete(material);
+    //Excluir material por ID
+    @DeleteMapping("/{id}")
+    public void excluiMaterial(@PathVariable(value = "id")long id) {
+        materialRepository.deleteById(id);
     }
 }

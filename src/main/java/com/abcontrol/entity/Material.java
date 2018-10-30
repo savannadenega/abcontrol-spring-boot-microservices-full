@@ -12,28 +12,32 @@ public class Material implements Serializable {
     private Long id;
 
     @NotNull //não aceita valores em branco
-    private String nomeMaterial;
-    private String descricaoMaterial;
     private String tipoMaterial;
+    private String descricaoMaterial;
+
+    @NotNull
+    private String tipoUnidade;
+
+    @NotNull
     private double valorUnidade;
 
     public Material(){
 
     }
 
-    public Material(Long id, String nomeMaterial, String descricaoMaterial, String tipoMaterial, double valorUnidade){
+    public Material(Long id,String tipoMaterial,String descricaoMaterial, String tipoUnidade, double valorUnidade){
 
         this.id = id;
-        this.nomeMaterial = nomeMaterial;
+        this.tipoUnidade = tipoUnidade;
         this.descricaoMaterial = descricaoMaterial;
         this.tipoMaterial = tipoMaterial;
         this.valorUnidade = valorUnidade;
 
     }
 
-    public Material (Long id, String nomeMaterial, String descricaoMaterial){
+    public Material (Long id, String tipoUnidade, String descricaoMaterial){
         this.id=id;
-        this.nomeMaterial=nomeMaterial;
+        this.tipoUnidade = tipoUnidade;
         this.descricaoMaterial=descricaoMaterial;
     }
 
@@ -45,12 +49,12 @@ public class Material implements Serializable {
         this.id = id;
     }
 
-    public String getNomeMaterial() {
-        return nomeMaterial;
+    public String getTipoUnidade() {
+        return tipoUnidade;
     }
 
-    public void setNomeMaterial(String nomeMaterial) {
-        this.nomeMaterial = nomeMaterial;
+    public void setTipoUnidade(String tipoUnidade) {
+        this.tipoUnidade = tipoUnidade;
     }
 
     public String getDescricaoMaterial() {

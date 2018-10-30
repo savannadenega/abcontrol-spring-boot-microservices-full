@@ -15,7 +15,7 @@ public class FormaPagamentoController {
     @Autowired//injeção de dependencias com
     private FormaPagamentoRepository pagamentoRepository;
 
-    //Listar todos os matériais
+    //Listar todos os pagamentos
     @GetMapping
     public List<FormaPagamento> listaFormaPagamentos() {
         return pagamentoRepository.findAll();
@@ -23,28 +23,28 @@ public class FormaPagamentoController {
     }
 
     //Lista por ID
-    @GetMapping("{/id}")
+    @GetMapping("/{id}")
     public FormaPagamento listaFormaPagamentoPorId(@PathVariable(value = "id") long id) {
         return pagamentoRepository.findById(id);
     }
 
 
-    // Cadastrar material
+    // Cadastrar forma de pagamento
     @PostMapping
     public FormaPagamento cadastraFormaPagamento(@RequestBody FormaPagamento formaPagamento) {
         return pagamentoRepository.save(formaPagamento);
     }
 
-    //Atualizar material
+    //Atualizar forma de pagamento
     @PutMapping
     public FormaPagamento atualizaFormaPagamento(@RequestBody FormaPagamento formaPagamento){
         return pagamentoRepository.save(formaPagamento);
     }
 
-    //Excluir material
-    @DeleteMapping
-    public void excluiFormaPagamento(@RequestBody FormaPagamento formaPagamento) {
-        pagamentoRepository.delete(formaPagamento);
+    //Excluir formapagamento por ID
+    @DeleteMapping("/{id}")
+    public void excluiFormaPagamento(@PathVariable(value = "id") long id) {
+        pagamentoRepository.deleteById(id);
     }
 }
 

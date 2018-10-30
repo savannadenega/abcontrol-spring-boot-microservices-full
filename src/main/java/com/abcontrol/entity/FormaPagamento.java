@@ -30,7 +30,7 @@ public class FormaPagamento implements Serializable {
         this.formaPagamento = formaPagamento;
         this.descricaoPagamento = descricaoPagamento;
         this.valorPagamento = valorPagamento;
-            }
+    }
 
     public Long getId() {
         return id;
