@@ -1,6 +1,6 @@
 package com.abcontrol.controller;
 
-import com.abcontrol.entity.Material;
+import com.abcontrol.entity.MaterialEntity;
 import com.abcontrol.repository.MaterialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,28 +17,26 @@ public class MaterialController {
 
     //Listar todos os matériais
     @GetMapping
-    public List<Material> listaMateriais() {
+    public List<MaterialEntity> listaMateriais() {
         return materialRepository.findAll();
-
     }
 
-    //Lista por ID
+    //Listar por ID
     @GetMapping("/{id}")
-    public Material listaMaterialPorId(@PathVariable(value = "id") long id) {
+    public MaterialEntity listaMaterialPorId(@PathVariable(value = "id") long id) {
         return materialRepository.findById(id);
     }
 
-
-    // Cadastrar material
+    //Cadastrar materialEntity
     @PostMapping
-    public Material cadastraMaterial(@RequestBody Material material) {
-        return materialRepository.save(material);
+    public MaterialEntity cadastraMaterial(@RequestBody MaterialEntity materialEntity) {
+        return materialRepository.save(materialEntity);
     }
 
-    //Atualizar material
+    //Atualizar materialEntity
     @PutMapping
-    public Material atualizaMaterial(@RequestBody Material material){
-        return materialRepository.save(material);
+    public MaterialEntity atualizaMaterial(@RequestBody MaterialEntity materialEntity){
+        return materialRepository.save(materialEntity);
     }
 
     //Excluir material por ID
@@ -46,4 +44,5 @@ public class MaterialController {
     public void excluiMaterial(@PathVariable(value = "id")long id) {
         materialRepository.deleteById(id);
     }
+
 }

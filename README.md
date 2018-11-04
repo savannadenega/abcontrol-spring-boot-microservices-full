@@ -40,7 +40,7 @@ _Esta operação adiciona uma tarefa na base de dados, utilizando o modelo JSON 
         "dataComecoRealizacao": "07/08/2017",
         "dataEstimadaEntrega": "08/12/2018",
         "usuario": "Savanna Denega",
-        "material": "Material 1",
+        "materialEntity": "Material 1",
         "anexo": "Sem anexo"
     }
 ```

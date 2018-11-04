@@ -1,51 +1,81 @@
 package com.abcontrol.controller;
 
 
-import com.abcontrol.entity.FormaPagamento;
+import com.abcontrol.entity.FormaPagamentoEntity;
 import com.abcontrol.repository.FormaPagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Validacao pela anotacao @Valid, ou seja, caso os parametros não estejam de
+ * acordo com as anotacoes de validacao nos atributos do FormaPagamentoEntity,
+ * retorna http status 400 Bad Request automaticamente, junto com a mensagem
+ * de erro de qual parametro esta incorreto.
+ */
 @RestController
-@RequestMapping(value="/formapagamento")
+@RequestMapping(value="/formaPagamento")
 public class FormaPagamentoController {
 
-    @Autowired//injeção de dependencias com
+    @Autowired
     private FormaPagamentoRepository pagamentoRepository;
 
-    //Listar todos os pagamentos
     @GetMapping
-    public List<FormaPagamento> listaFormaPagamentos() {
-        return pagamentoRepository.findAll();
+    public ResponseEntity<List<FormaPagamentoEntity>> listarFormaPagamentos() {
+
+        return ResponseEntity.ok(pagamentoRepository.findAll());
 
     }
 
-    //Lista por ID
     @GetMapping("/{id}")
-    public FormaPagamento listaFormaPagamentoPorId(@PathVariable(value = "id") long id) {
-        return pagamentoRepository.findById(id);
+    public ResponseEntity<FormaPagamentoEntity> listarFormaPagamentoPorId(@Valid @PathVariable(value = "id") long id) {
+
+        if(!pagamentoRepository.existsById(id)){
+            return ResponseEntity.notFound().build();
+        } else if(pagamentoRepository.findById(id) == null){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(pagamentoRepository.findById(id));
     }
 
-
-    // Cadastrar forma de pagamento
     @PostMapping
-    public FormaPagamento cadastraFormaPagamento(@RequestBody FormaPagamento formaPagamento) {
-        return pagamentoRepository.save(formaPagamento);
+    public ResponseEntity<FormaPagamentoEntity> cadastrarFormaPagamento(@Valid @RequestBody FormaPagamentoEntity formaPagamentoEntity) {
+
+        return ResponseEntity.ok(pagamentoRepository.save(formaPagamentoEntity));
+
     }
 
-    //Atualizar forma de pagamento
     @PutMapping
-    public FormaPagamento atualizaFormaPagamento(@RequestBody FormaPagamento formaPagamento){
-        return pagamentoRepository.save(formaPagamento);
+    public ResponseEntity<FormaPagamentoEntity> atualizarFormaPagamento(@Valid @RequestBody FormaPagamentoEntity formaPagamentoEntity){
+
+        if(!pagamentoRepository.existsById(formaPagamentoEntity.getId())){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(pagamentoRepository.save(formaPagamentoEntity));
     }
 
-    //Excluir formapagamento por ID
     @DeleteMapping("/{id}")
-    public void excluiFormaPagamento(@PathVariable(value = "id") long id) {
-        pagamentoRepository.deleteById(id);
+    public ResponseEntity<FormaPagamentoEntity> excluirFormaPagamento(@Valid @PathVariable(value = "id") long id) {
+
+        FormaPagamentoEntity formaPagamentoEntityResponse;
+
+        if(!pagamentoRepository.existsById(id)){
+            return ResponseEntity.notFound().build();
+        } else {
+            formaPagamentoEntityResponse = pagamentoRepository.findById(id);
+            pagamentoRepository.deleteById(id);
+        }
+
+        return ResponseEntity.ok(formaPagamentoEntityResponse);
+
     }
+
 }
 
 

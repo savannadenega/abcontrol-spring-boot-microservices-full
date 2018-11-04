@@ -6,7 +6,8 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="TB_MATERIAL")
-public class Material implements Serializable {
+public class MaterialEntity implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //valor gerado automaticamente
     private Long id;
@@ -21,11 +22,11 @@ public class Material implements Serializable {
     @NotNull
     private double valorUnidade;
 
-    public Material(){
+    public MaterialEntity(){
 
     }
 
-    public Material(Long id,String tipoMaterial,String descricaoMaterial, String tipoUnidade, double valorUnidade){
+    public MaterialEntity(Long id,String tipoMaterial,String descricaoMaterial, String tipoUnidade, double valorUnidade){
 
         this.id = id;
         this.tipoUnidade = tipoUnidade;
@@ -35,10 +36,12 @@ public class Material implements Serializable {
 
     }
 
-    public Material (Long id, String tipoUnidade, String descricaoMaterial){
+    public MaterialEntity (Long id, String tipoUnidade, String descricaoMaterial){
+
         this.id=id;
         this.tipoUnidade = tipoUnidade;
         this.descricaoMaterial=descricaoMaterial;
+
     }
 
     public Long getId() {
@@ -80,8 +83,6 @@ public class Material implements Serializable {
     public void setValorUnidade(double valorUnidade) {
         this.valorUnidade = valorUnidade;
     }
-
-
 
 
 }

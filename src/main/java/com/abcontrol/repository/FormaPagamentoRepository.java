@@ -1,6 +1,6 @@
 package com.abcontrol.repository;
 
-import com.abcontrol.entity.FormaPagamento;
+import com.abcontrol.entity.FormaPagamentoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
  */
 //JpaRepository possui metodos prontos para fazer pesistencia no banco
 @Repository
-public interface FormaPagamentoRepository extends JpaRepository<FormaPagamento, Long> {
+public interface FormaPagamentoRepository extends JpaRepository<FormaPagamentoEntity, Long> {
 
-    FormaPagamento findById(long id);
+    FormaPagamentoEntity findById(long id);
 
 }
 
