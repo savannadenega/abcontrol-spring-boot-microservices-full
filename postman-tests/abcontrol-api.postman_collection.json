@@ -38,7 +38,7 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/formaPagamento/2",
+					"name": "Positivo - localhost:8080/formaPagamento/2",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -54,21 +54,51 @@
 							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
 						},
 						"url": {
-							"raw": "localhost:8080/formaPagamento/2",
+							"raw": "localhost:8080/formaPagamento/28",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"formaPagamento",
-								"2"
+								"28"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:8080/formaPagamento",
+					"name": "Negativo ID Inexistente - localhost:8080/formaPagamento/1001",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/formaPagamento",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -81,7 +111,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"2x - MasterCard\",\n\t\"valorPagamento\":200.00\n}"
+							"raw": "{\n\t\"formaPagamento\" : \"Cartão Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 2000.00\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/formaPagamento",
@@ -97,7 +127,36 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/formaPagamento",
+					"name": "Negativo - localhost:8080/formaPagamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"formaPagamento\" : null,\n\t\"descricaoPagamento\" : \"2x - MasterCard\",\n\t\"valorPagamento\" : 2000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/formaPagamento",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -110,6 +169,64 @@
 						],
 						"body": {
 							"mode": "raw",
+							"raw": "{\n\t\"id\": 2,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/formaPagamento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": null,\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/formaPagamento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
 							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
 						},
 						"url": {
@@ -126,7 +243,7 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/formaPagamento",
+					"name": "Positivo - localhost:8080/formaPagamento",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -139,16 +256,47 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:8080/formaPagamento",
+							"raw": "localhost:8080/formaPagamento/26",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"formaPagamento"
+								"formaPagamento",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/formaPagamento",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"formaPagamento\": \"À vista\",\n    \"descricaoPagamento\": \"À vista\",\n    \"valorPagamento\": 20000.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/formaPagamento/2121",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formaPagamento",
+								"2121"
 							]
 						}
 					},
@@ -182,7 +330,7 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/material/17",
+					"name": "Positivo - localhost:8080/material/36",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -198,21 +346,51 @@
 							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
 						},
 						"url": {
-							"raw": "localhost:8080/material/17",
+							"raw": "localhost:8080/material/36",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"material",
-								"17"
+								"36"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:8080/material",
+					"name": "Negativo ID Inexistente - localhost:8080/material/2121",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material/2121",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material",
+								"2121"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/material",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -225,7 +403,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+							"raw": "{\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoUnidade\" : \"Kg\",\n\t\"valorUnidade\" : 50.00\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/material",
@@ -241,7 +419,36 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/material",
+					"name": "Negativo - localhost:8080/material",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tipoMaterial\" : null,\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoUnidade\" : \"Kg\",\n\t\"valorUnidade\" : 50.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/material",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -254,7 +461,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\" : 17,\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão Novo\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+							"raw": "{\n\t\"id\" : 36,\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"descricaoMaterial\" : \"Cimento Padrão Novo\",\n\t\"tipoUnidade\" : \"Kg\",\n\t\"valorUnidade\" : 55.00\n}"
 						},
 						"url": {
 							"raw": "localhost:8080/material",
@@ -270,7 +477,65 @@
 					"response": []
 				},
 				{
-					"name": "localhost:8080/material",
+					"name": "Negativo - localhost:8080/material",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 36,\n\t\"tipoMaterial\" : null,\n\t\"descricaoMaterial\" : \"Cimento Padrão Novo\",\n\t\"tipoUnidade\" : \"Kg\",\n\t\"valorUnidade\" : 55.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/material",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 2121,\n\t\"tipoMaterial\" : \"Construção\",\n\t\"descricaoMaterial\" : \"Cimento Padrão Novo\",\n\t\"tipoUnidade\" : \"Kg\",\n\t\"valorUnidade\" : 55.00\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/material",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -283,16 +548,47 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 17,\n    \"nomeMaterial\": \"Cimento\",\n    \"descricaoMaterial\": \"Cimento Padrão Novo\",\n    \"tipoMaterial\": \"Contrução\",\n    \"valorUnidade\": 50\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:8080/material",
+							"raw": "localhost:8080/material/35",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"material"
+								"material",
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/material",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/material/2121",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material",
+								"2121"
 							]
 						}
 					},

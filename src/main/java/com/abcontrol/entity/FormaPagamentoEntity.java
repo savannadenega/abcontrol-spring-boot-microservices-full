@@ -1,13 +1,8 @@
-
 package com.abcontrol.entity;
-
-import org.springframework.cache.support.NullValue;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.io.Serializable;
 
 /**
@@ -19,7 +14,7 @@ import java.io.Serializable;
 public class FormaPagamentoEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //valor gerado automaticamente
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Não aceita forma de pagamento em branco ou nulo.") //ja valida not null

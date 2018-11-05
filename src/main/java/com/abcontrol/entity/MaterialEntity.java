@@ -1,6 +1,7 @@
 package com.abcontrol.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -9,24 +10,26 @@ import java.io.Serializable;
 public class MaterialEntity implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //valor gerado automaticamente
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull //não aceita valores em branco
+    @NotBlank(message = "Não aceita tipo de material em branco ou nulo.") //ja valida not null
     private String tipoMaterial;
+
+    @NotBlank(message = "Não aceita descrição de material em branco ou nulo.") //ja valida not null
     private String descricaoMaterial;
 
-    @NotNull
+    @NotBlank(message = "Não aceita tipo de unidade em branco ou nulo.") //ja valida not null
     private String tipoUnidade;
 
-    @NotNull
+    @NotNull(message = "Não aceita valor da unidade em branco ou nulo.") //ja valida not null
     private double valorUnidade;
 
     public MaterialEntity(){
 
     }
 
-    public MaterialEntity(Long id,String tipoMaterial,String descricaoMaterial, String tipoUnidade, double valorUnidade){
+    public MaterialEntity(Long id, String tipoMaterial, String descricaoMaterial, String tipoUnidade, double valorUnidade){
 
         this.id = id;
         this.tipoUnidade = tipoUnidade;

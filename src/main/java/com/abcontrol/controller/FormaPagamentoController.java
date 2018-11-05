@@ -1,10 +1,8 @@
 package com.abcontrol.controller;
 
-
 import com.abcontrol.entity.FormaPagamentoEntity;
 import com.abcontrol.repository.FormaPagamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,6 +75,3 @@ public class FormaPagamentoController {
     }
 
 }
-
-
-
