@@ -162,10 +162,10 @@ public class ObraControllerTest {
         obraEntityResponse.setDataInicial("01/01/2018");
         obraEntityResponse.setPrevisaoTermino("01/01/2019");
 
-        ResponseEntity<ObraEntity> responseEntityFormaPagamentoEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
+        ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
         when(obraController.atualizarObra(any(ObraEntity.class)))
-                .thenReturn(responseEntityFormaPagamentoEntity);
+                .thenReturn(responseEntityObraEntity);
 
         this.mockMvc
                 .perform(put(URI).contentType(MediaType.APPLICATION_JSON)
