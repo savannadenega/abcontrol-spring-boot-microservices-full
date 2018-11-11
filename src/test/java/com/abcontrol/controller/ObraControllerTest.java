@@ -15,8 +15,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import test.util.ResourceUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
@@ -46,6 +49,10 @@ public class ObraControllerTest {
 
     private static final String SRC_JSON_FAIL = "json/fail/obra/";
 
+    Locale brasil = new Locale("pt","br");
+
+    SimpleDateFormat s= new SimpleDateFormat("dd/MM/yyyy");
+
     @Test
     public void deveriaListarTodasObrasPositivo() throws Exception {
 
@@ -71,8 +78,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
@@ -106,8 +113,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
@@ -134,8 +141,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.NOT_FOUND);
 
@@ -159,8 +166,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
@@ -185,8 +192,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome(null);
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
@@ -210,8 +217,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.NOT_FOUND);
 
@@ -237,8 +244,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.OK);
 
@@ -262,8 +269,8 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        obraEntityResponse.setDataInicial("01/01/2018");
-        obraEntityResponse.setPrevisaoTermino("01/01/2019");
+        obraEntityResponse.setDataInicial(s.parse("01/01/2018"));
+        obraEntityResponse.setPrevisaoTermino(s.parse("01/01/2019"));
 
         ResponseEntity<ObraEntity> responseEntityObraEntity = new ResponseEntity<ObraEntity>(obraEntityResponse, HttpStatus.NOT_FOUND);
 

@@ -4,10 +4,15 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author FrancieleNF
  */
+
+
 @Entity
 @Table(name="TB_OBRA")
 public class ObraEntity implements Serializable{
@@ -25,23 +30,29 @@ public class ObraEntity implements Serializable{
     @NotBlank(message = "Não aceita status da obra em branco ou nulo.") //ja valida not null
     private String statusObra;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull(message = "Não aceita data inicial em branco ou nulo.") //ja valida not null
-    private String dataInicial;
+    private Date dataInicial;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull(message = "Não aceita previsao de término em branco ou nulo.") //ja valida not null
-    private String previsaoTermino;
+    private Date previsaoTermino;
+
+    @Transient
+    SimpleDateFormat s= new SimpleDateFormat("dd/MM/yyyy");
 
     public ObraEntity(){
 
     }
 
-    public ObraEntity(Long id, String nome, String tipoObra, String statusObra, String dataInicial, String previsaoTermino) {
+    public ObraEntity(Long id, String nome, String tipoObra, String statusObra, String dataInicial, String previsaoTermino) throws ParseException {
+
         this.id = id;
         this.nome = nome;
         this.tipoObra = tipoObra;
         this.statusObra = statusObra;
-        this.dataInicial = dataInicial;
-        this.previsaoTermino = previsaoTermino;
+        this.dataInicial = s.parse(dataInicial);
+        this.previsaoTermino = s.parse(previsaoTermino);
     }
 
     public Long getId() {
@@ -76,19 +87,19 @@ public class ObraEntity implements Serializable{
         this.statusObra = statusObra;
     }
 
-    public String getDataInicial() {
+    public Date getDataInicial() {
         return dataInicial;
     }
 
-    public void setDataInicial(String dataInicial) {
+    public void setDataInicial(Date dataInicial) {
         this.dataInicial = dataInicial;
     }
 
-    public String getPrevisaoTermino() {
+    public Date getPrevisaoTermino() {
         return previsaoTermino;
     }
 
-    public void setPrevisaoTermino(String previsaoTermino) {
+    public void setPrevisaoTermino(Date previsaoTermino) {
         this.previsaoTermino = previsaoTermino;
     }
 }
