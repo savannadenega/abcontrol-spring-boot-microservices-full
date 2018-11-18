@@ -1,5 +1,8 @@
 package com.abcontrol.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -31,15 +34,15 @@ public class ObraEntity implements Serializable{
     private String statusObra;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @NotNull(message = "Não aceita data inicial em branco ou nulo.") //ja valida not null
+    @NotNull(message = "Não aceita data inicial em branco ou nulo.")
     private Date dataInicial;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @NotNull(message = "Não aceita previsao de término em branco ou nulo.") //ja valida not null
+    @NotNull(message = "Não aceita previsao de término em branco ou nulo.")
     private Date previsaoTermino;
 
     @Transient
-    SimpleDateFormat s= new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
 
     public ObraEntity(){
 
