@@ -1,15 +1,14 @@
 package com.abcontrol.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 /**
  * @author FrancieleNF
@@ -33,29 +32,30 @@ public class ObraEntity implements Serializable{
     @NotBlank(message = "Não aceita status da obra em branco ou nulo.") //ja valida not null
     private String statusObra;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @NotNull(message = "Não aceita data inicial em branco ou nulo.")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone ="GMT-03:00" )
+    @Temporal(TemporalType.DATE)
+    @NotNull(message = "Não aceita data inicial em branco ou nulo.") //ja valida not null
     private Date dataInicial;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @NotNull(message = "Não aceita previsao de término em branco ou nulo.")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone ="GMT-03:00" )
+    @Temporal(TemporalType.DATE)
+    @NotNull(message = "Não aceita previsao de término em branco ou nulo.") //ja valida not null
     private Date previsaoTermino;
 
-    @Transient
-    SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+
+
 
     public ObraEntity(){
 
     }
 
-    public ObraEntity(Long id, String nome, String tipoObra, String statusObra, String dataInicial, String previsaoTermino) throws ParseException {
+    public ObraEntity(@NotBlank(message = "Não aceita nome branco ou nulo.")String nome, @NotBlank(message = "Não aceita tipo de obra em branco ou nulo.") String tipoObra, @NotBlank(message = "Não aceita status da obra em branco ou nulo.")String statusObra, @NotNull(message = "Não aceita data inicial em branco ou nulo.")Date dataInicial, @NotNull(message = "Não aceita data inicial em branco ou nulo.")Date previsaoTermino) {
 
-        this.id = id;
         this.nome = nome;
         this.tipoObra = tipoObra;
         this.statusObra = statusObra;
-        this.dataInicial = s.parse(dataInicial);
-        this.previsaoTermino = s.parse(previsaoTermino);
+        this.dataInicial = dataInicial;
+        this.previsaoTermino = previsaoTermino;
     }
 
     public Long getId() {
@@ -106,4 +106,3 @@ public class ObraEntity implements Serializable{
         this.previsaoTermino = previsaoTermino;
     }
 }
-

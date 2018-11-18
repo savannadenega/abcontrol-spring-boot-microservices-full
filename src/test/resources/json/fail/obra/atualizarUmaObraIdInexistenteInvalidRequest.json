@@ -3,6 +3,6 @@
   "nome": "Obra 1",
   "tipoObra": "tipo 1",
   "statusObra": "Em andamento",
-  "dataInicial": "2018-01-01T00:00:00.000+0000",
-  "previsaoTermino": "2019-01-01T00:00:00.000+0000"
+  "dataInicial": "01/01/2018",
+  "previsaoTermino": "01/01/2019"
 }
