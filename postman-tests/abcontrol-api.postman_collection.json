@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "localhost:8080/formaPagamento",
@@ -51,7 +51,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "localhost:8080/formaPagamento/28",
@@ -81,7 +81,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"formaPagamento\" : \"Crédito\",\n\t\"descricaoPagamento\" : \"3x - MasterCard\",\n\t\"valorPagamento\" : 1230.23\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "localhost:8080/formaPagamento/1001",
@@ -343,7 +343,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "localhost:8080/material/36",
@@ -373,7 +373,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nomeMaterial\" : \"Cimento\",\n\t\"descricaoMaterial\" : \"Cimento Padrão\",\n\t\"tipoMaterial\" : \"Contrução\",\n\t\"valorUnidade\" : 50.00\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "localhost:8080/material/2121",
@@ -593,6 +593,589 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "compra",
+			"item": [
+				{
+					"name": "localhost:8080/compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/compra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/compra/1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/compra/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/compra/2121",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/compra/2121",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra",
+								"2121"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/compra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeCompra\" : \"Compra semanal\",\n\t\"dataCompra\" : \"28/11/1995\",\n\t\"valorTotal\" : 222.00,\n\t\"estadoCompra\" : \"Finalizada\",\n\t\"ordemMaterial\" : [\n\t\t{\n\t\t\t\"quantidadeMaterial\": 1,\n\t\t\t\"idMaterial\" : 37\n\t\t},\n\t\t{\n\t\t\t\"quantidadeMaterial\" : 2,\n\t\t\t\"idMaterial\" : 38\n\t\t}\n\t\t],\n\t\"razaoSocialFornecedor\" : \"Empresa Oi\",\n\t\"emailFornecedor\" : \"empresaoi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/compra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/compra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeCompra\" : \"\",\n\t\"dataCompra\" : \"27/11/1995\",\n\t\"valorTotal\" : 222.00,\n\t\"estadoCompra\" : \"Finalizada\",\n\t\"ordemMaterial\" : [\n\t\t{\n\t\t\t\"quantidadeMaterial\": \"1\",\n\t\t\t\"idMaterial\" : \"37\"\n\t\t}\n\t\t],\n\t\"razaoSocialFornecedor\" : \"Empresa Oi\",\n\t\"emailFornecedor\" : \"empresaoi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/compra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/compra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 72,\n\t\"nomeCompra\" : \"Compra semanal\",\n\t\"dataCompra\" : \"27/11/1995\",\n\t\"valorTotal\" : 333.00,\n\t\"estadoCompra\" : \"Finalizada\",\n\t\"ordemMaterial\" : [\n\t\t{\n\t\t\t\"quantidadeMaterial\": \"1\",\n\t\t\t\"idMaterial\" : \"38\"\n\t\t}\n\t\t],\n\t\"razaoSocialFornecedor\" : \"Empresa Oi\",\n\t\"emailFornecedor\" : \"empresaoi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/compra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/compra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 72,\n\t\"nomeCompra\" : \"\",\n\t\"dataCompra\" : \"27/11/1995\",\n\t\"valorTotal\" : 333.00,\n\t\"estadoCompra\" : \"Finalizada\",\n\t\"ordemMaterial\" : [\n\t\t{\n\t\t\t\"quantidadeMaterial\": \"1\",\n\t\t\t\"idMaterial\" : \"38\"\n\t\t}\n\t\t],\n\t\"razaoSocialFornecedor\" : \"Empresa Oi\",\n\t\"emailFornecedor\" : \"empresaoi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/compra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/material",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 7272,\n\t\"nomeCompra\" : \"Compra semanal\",\n\t\"dataCompra\" : \"27/11/1995\",\n\t\"valorTotal\" : 333.00,\n\t\"estadoCompra\" : \"Finalizada\",\n\t\"ordemMaterial\" : [\n\t\t{\n\t\t\t\"quantidadeMaterial\": \"1\",\n\t\t\t\"idMaterial\" : \"38\"\n\t\t}\n\t\t],\n\t\"razaoSocialFornecedor\" : \"Empresa Oi\",\n\t\"emailFornecedor\" : \"empresaoi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/material",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"material"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/enviarEmailCompra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/compra/enviarEmailCompra/74",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra",
+								"enviarEmailCompra",
+								"74"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "obra",
+			"item": [
+				{
+					"name": "localhost:8080/obra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/obra/51",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/obra/51",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/obra/2121",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/obra/2121",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra",
+								"2121"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/obra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"Obra 2\",\n\t\"tipoObra\" : \"Construção\",\n\t\"statusObra\" : \"Em andamento\",\n\t\"dataInicial\" : \"2018-08-06\",\n\t\"previsaoTermino\" : \"2018-10-06\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/obra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"\",\n\t\"tipoObra\" : \"Construção\",\n\t\"statusObra\" : \"Em andamento\",\n\t\"dataInicial\" : \"2018-08-06\",\n\t\"previsaoTermino\" : \"2018-10-06\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/obra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 51,\n\t\"nome\" : \"Obra 2\",\n\t\"tipoObra\" : \"Construção\",\n\t\"statusObra\" : \"Em andamento\",\n\t\"dataInicial\" : \"2018-08-06\",\n\t\"previsaoTermino\" : \"2018-10-06\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/obra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 51,\n\t\"nome\" : \"\",\n\t\"tipoObra\" : \"Construção\",\n\t\"statusObra\" : \"Em andamento\",\n\t\"dataInicial\" : \"2018-08-06\",\n\t\"previsaoTermino\" : \"2018-10-06\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo ID Inexistente - localhost:8080/obra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 5151,\n\t\"nome\" : \"Obra 2\",\n\t\"tipoObra\" : \"Construção\",\n\t\"statusObra\" : \"Em andamento\",\n\t\"dataInicial\" : \"2018-08-06\",\n\t\"previsaoTermino\" : \"2018-10-06\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/obra",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positivo - localhost:8080/obra/52",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/obra/52",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negativo - localhost:8080/obra/5151",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/obra/5151",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"obra",
+								"5151"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c02408dd-8138-4fd0-b912-4aa005ae17a1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a31bec2-ac91-4c0b-8fe2-2cc302162f97",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		}

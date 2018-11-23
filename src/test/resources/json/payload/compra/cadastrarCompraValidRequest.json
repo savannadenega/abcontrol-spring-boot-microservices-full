@@ -1,0 +1,14 @@
+{
+  "nomeCompra": "Compra semanal",
+  "dataCompra": "18/11/2018",
+  "valorTotal": 2222.00,
+  "estadoCompra": "Finalizada",
+  "ordemMaterial": [
+    {
+      "quantidadeMaterial": 1,
+      "idMaterial": 37
+    }
+  ],
+  "razaoSocialFornecedor": "Empresa da Savanna",
+  "emailFornecedor": "savanna.denega@hotmail.com"
+}

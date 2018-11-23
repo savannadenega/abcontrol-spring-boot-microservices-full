@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "nome": "Obra 1",
+  "tipoObra": "Construção 2",
+  "statusObra": "Em andamento",
+  "dataInicial": "01/01/2018",
+  "previsaoTermino": "01/01/2019"
+}

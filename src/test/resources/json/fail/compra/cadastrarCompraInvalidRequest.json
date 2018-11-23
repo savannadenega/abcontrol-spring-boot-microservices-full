@@ -1,0 +1,18 @@
+{
+  "nomeCompra" : "",
+  "dataCompra" : "28/11/1995",
+  "valorTotal" : 222.00,
+  "estadoCompra" : "Finalizada",
+  "ordemMaterial" : [
+    {
+      "quantidadeMaterial": 1,
+      "idMaterial" : 37
+    },
+    {
+      "quantidadeMaterial" : 2,
+      "idMaterial" : 38
+    }
+  ],
+  "razaoSocialFornecedor" : "Empresa Oi",
+  "emailFornecedor" : "empresaoi@gmail.com"
+}

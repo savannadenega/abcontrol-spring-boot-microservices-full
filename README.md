@@ -33,7 +33,7 @@ _Esta operação adiciona uma tarefa na base de dados, utilizando o modelo JSON 
 ```
     {
         "id": 4,
-        "nome": "Contratar empregados",
+        "nomeCompra": "Contratar empregados",
         "descricao": "Contratar empregados",
         "prioridade": "Alta",
         "status": "Em construção",
