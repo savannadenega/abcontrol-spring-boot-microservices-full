@@ -23,11 +23,6 @@ public class EmailServiceTest {
     @InjectMocks
     EmailService emailService;
 
-//    @Before
-//    public void setUp(){
-//        emailService = new EmailService();
-//    }
-
     @Test
     @Ignore
     public void testEnviarEmail() throws MessagingException {
