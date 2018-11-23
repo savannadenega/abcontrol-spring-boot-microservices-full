@@ -4,6 +4,8 @@ import com.abcontrol.service.EmailService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Spy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,12 +18,14 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @RunWith(SpringRunner.class)
 public class EmailServiceTest {
 
+    @Spy
+    @InjectMocks
     EmailService emailService;
 
-    @Before
-    public void setUp(){
-        emailService = new EmailService();
-    }
+//    @Before
+//    public void setUp(){
+//        emailService = new EmailService();
+//    }
 
     @Test
     public void testEnviarEmail() throws MessagingException {
