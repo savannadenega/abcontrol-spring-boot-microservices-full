@@ -2,6 +2,7 @@ package com.abcontrol.service;
 
 import com.abcontrol.service.EmailService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -28,6 +29,7 @@ public class EmailServiceTest {
 //    }
 
     @Test
+    @Ignore
     public void testEnviarEmail() throws MessagingException {
 
         emailService.enviarEmail("savanna.denega@hotmail.com", "Teste");
@@ -35,6 +37,7 @@ public class EmailServiceTest {
     }
 
     @Test
+    @Ignore
     public void testEnviarEmailNegativo() throws MessagingException {
 
         assertThatThrownBy(() -> emailService.enviarEmail("", "Teste"))
