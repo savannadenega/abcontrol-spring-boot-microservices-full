@@ -11,8 +11,7 @@ import java.util.List;
 
 /**
  * @author FrancieleNF
- */
-/**
+ *
  * Validacao pela anotacao @Valid, ou seja, caso os parametros não estejam de
  * acordo com as anotacoes de validacao nos atributos do FormaPagamentoEntity,
  * retorna http status 400 Bad Request automaticamente, junto com a mensagem

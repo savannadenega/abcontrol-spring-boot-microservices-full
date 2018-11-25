@@ -5,6 +5,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+/**
+ * @author SavannaDenega
+ */
 @Entity
 @Table(name="TB_MATERIAL")
 public class MaterialEntity implements Serializable{
