@@ -13,6 +13,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.TimeZone;
 
+/**
+ * @author SavannaDenega
+ */
+
 @Entity
 @Table(name="TB_COMPRA")
 public class CompraEntity implements Serializable{
