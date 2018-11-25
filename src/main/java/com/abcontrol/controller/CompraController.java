@@ -87,19 +87,9 @@ public class CompraController {
         CompraEntity compraEntity = compraRepository.findById(idCompra);
         ArrayList<OrdemCompraEntity> listOrdemCompra = new ArrayList<>(compraEntity.getOrdemMaterial());
 
-        ArrayList<Long> listIdsMaterial = new ArrayList<>();
-        for(int i = 0; i < listOrdemCompra.size(); i++){
-            listIdsMaterial.add(listOrdemCompra.get(i).getIdMaterial());
-        }
-
-        ArrayList<Optional<MaterialEntity>> materialEntityCollection = new ArrayList<>();
-        for(int i = 0; i < listIdsMaterial.size(); i++){
-            materialEntityCollection.add(materialRepository.findById(listIdsMaterial.get(i)));
-        }
-
         String msgListMateriais = "Lista de Materiais para Compra ABControl - Data " + compraEntity.getDataCompra() + " :<br/><br/>";
-        for (int i = 0; i < materialEntityCollection.size(); i++){
-            msgListMateriais += "- Material: " + materialEntityCollection.get(i).get().getDescricaoMaterial() + " - ";
+        for (int i = 0; i < listOrdemCompra.size(); i++){
+            msgListMateriais += "- Material: " + listOrdemCompra.get(i).getMaterial().getDescricaoMaterial() + " - ";
             msgListMateriais += "Quantidade: " + listOrdemCompra.get(i).getQuantidadeMaterial() + "<br/>";
         }
 
