@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -27,36 +28,37 @@ public class ProjetoEntity implements Serializable {
     private String tipoProjeto;
 
     @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
-    private double statusProjeto;
+    private String statusProjeto;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "GMT-03:00")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone = "GMT-03:00")
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Não aceita data inicial em branco ou nulo.")
     private Date dataInicial;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "GMT-03:00")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone = "GMT-03:00")
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Não aceita data de previsao de termino em branco ou nulo.")
     private Date previsaoTermino;
 
     // Relacionamentos
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
     private long idProposta;
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
     private long idOrcamento;
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
-    private long idObra;
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    @OneToMany
+    private Collection<ObraEntity> obras;
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
     private long idTarefa;
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
     private long idEquipe;
 
-    @NotNull(message = "Não aceita status do projeto em branco ou nulo.")
+    //@NotNull(message = "Não aceita status do projeto em branco ou nulo.")
     private long idAnexo;
 
 
@@ -64,7 +66,7 @@ public class ProjetoEntity implements Serializable {
 
     }
 
-    public ProjetoEntity(Long id, @NotBlank(message = "Não aceita nome do projeto em branco ou nulo.") String nomeProjeto, @NotBlank(message = "Não aceita tipo de projeto em branco ou nulo.") String tipoProjeto, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") double statusProjeto, @NotNull(message = "Não aceita data inicial em branco ou nulo.") Date dataInicial, @NotNull(message = "Não aceita data de previsao de termino em branco ou nulo.") Date previsaoTermino, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idProposta, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idOrcamento, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idObra, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idTarefa, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idEquipe, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idAnexo) {
+    public ProjetoEntity(Long id, @NotBlank(message = "Não aceita nome do projeto em branco ou nulo.") String nomeProjeto, @NotBlank(message = "Não aceita tipo de projeto em branco ou nulo.") String tipoProjeto, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") String statusProjeto, @NotNull(message = "Não aceita data inicial em branco ou nulo.") Date dataInicial, @NotNull(message = "Não aceita data de previsao de termino em branco ou nulo.") Date previsaoTermino, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idProposta, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idOrcamento, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") Collection<ObraEntity> obras, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idTarefa, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idEquipe, @NotNull(message = "Não aceita status do projeto em branco ou nulo.") long idAnexo) {
         this.id = id;
         this.nomeProjeto = nomeProjeto;
         this.tipoProjeto = tipoProjeto;
@@ -73,7 +75,7 @@ public class ProjetoEntity implements Serializable {
         this.previsaoTermino = previsaoTermino;
         this.idProposta = idProposta;
         this.idOrcamento = idOrcamento;
-        this.idObra = idObra;
+        this.obras = obras;
         this.idTarefa = idTarefa;
         this.idEquipe = idEquipe;
         this.idAnexo = idAnexo;
@@ -103,11 +105,11 @@ public class ProjetoEntity implements Serializable {
         this.tipoProjeto = tipoProjeto;
     }
 
-    public double getStatusProjeto() {
+    public String getStatusProjeto() {
         return statusProjeto;
     }
 
-    public void setStatusProjeto(double statusProjeto) {
+    public void setStatusProjeto(String statusProjeto) {
         this.statusProjeto = statusProjeto;
     }
 
@@ -143,12 +145,12 @@ public class ProjetoEntity implements Serializable {
         this.idOrcamento = idOrcamento;
     }
 
-    public long getIdObra() {
-        return idObra;
+    public Collection<ObraEntity> getObras() {
+        return obras;
     }
 
-    public void setIdObra(long idObra) {
-        this.idObra = idObra;
+    public void setObras(Collection<ObraEntity> obras) {
+        this.obras = obras;
     }
 
     public long getIdTarefa() {
