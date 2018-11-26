@@ -32,23 +32,13 @@ public class MaterialEntity implements Serializable{
 
     }
 
-    public MaterialEntity(Long id, String tipoMaterial, String descricaoMaterial, String tipoUnidade, double valorUnidade){
-
-        this.id = id;
-        this.tipoUnidade = tipoUnidade;
-        this.descricaoMaterial = descricaoMaterial;
+    public MaterialEntity(@NotBlank(message = "Não aceita tipo de material em branco ou nulo.") String tipoMaterial, @NotBlank(message = "Não aceita descrição de material em branco ou nulo.") String descricaoMaterial, @NotBlank(message = "Não aceita tipo de unidade em branco ou nulo.") String tipoUnidade, @NotNull(message = "Não aceita valor da unidade em branco ou nulo.") double valorUnidade) {
         this.tipoMaterial = tipoMaterial;
-        this.valorUnidade = valorUnidade;
-
-    }
-
-    public MaterialEntity (Long id, String tipoUnidade, String descricaoMaterial){
-
-        this.id=id;
+        this.descricaoMaterial = descricaoMaterial;
         this.tipoUnidade = tipoUnidade;
-        this.descricaoMaterial=descricaoMaterial;
-
+        this.valorUnidade = valorUnidade;
     }
+
 
     public Long getId() {
         return id;
