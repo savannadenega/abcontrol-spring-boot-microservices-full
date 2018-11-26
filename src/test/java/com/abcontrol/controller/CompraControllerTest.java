@@ -2,6 +2,7 @@ package com.abcontrol.controller;
 
 import com.abcontrol.entity.CompraEntity;
 import com.abcontrol.entity.FormaPagamentoEntity;
+import com.abcontrol.entity.MaterialEntity;
 import com.abcontrol.entity.OrdemCompraEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -76,18 +77,20 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra semanal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
+
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");
@@ -124,18 +127,19 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra semanal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");
@@ -165,18 +169,19 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra semanal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");
@@ -203,18 +208,21 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra mensal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
+
+
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");
@@ -242,18 +250,19 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra mensal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");
@@ -279,18 +288,21 @@ public class CompraControllerTest {
         compraEntityResponse.setId(1l);
         compraEntityResponse.setNomeCompra("Compra mensal");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("18/11/2018");
+        Date date = simpleDateFormat.parse("2018-11-18T14:00:00.000Z");
         compraEntityResponse.setDataCompra(date);
 
         compraEntityResponse.setValorTotal(2222.00);
         compraEntityResponse.setEstadoCompra("Finalizada");
 
         Collection<OrdemCompraEntity> ordemMaterial = new ArrayList<>();
-        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1, 37));
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).add(new OrdemCompraEntity(1,new MaterialEntity("Contrução","Cimento Padrão Novo","Kg",55.00)));
         ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).setId(2l);
         compraEntityResponse.setOrdemMaterial(ordemMaterial);
+        ((ArrayList<OrdemCompraEntity>) ordemMaterial).get(0).getMaterial().setId(3l);
+
+
 
         compraEntityResponse.setRazaoSocialFornecedor("Empresa da Savanna");
         compraEntityResponse.setEmailFornecedor("savanna.denega@hotmail.com");

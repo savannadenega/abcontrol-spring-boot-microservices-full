@@ -1,16 +1,24 @@
 {
-  "id" : 1,
-  "nomeCompra": "Compra semanal",
-  "dataCompra": "18/11/2018",
-  "valorTotal": 2222.00,
-  "estadoCompra": "Finalizada",
-  "ordemMaterial": [
+  "id":1,
+  "nomeCompra":"Compra semanal",
+  "dataCompra":"2018-11-18T14:00:00.000Z",
+  "valorTotal":2222.0,
+  "estadoCompra":"Finalizada",
+  "ordemMaterial":[
     {
-      "id" : 2,
-      "quantidadeMaterial": 1,
-      "idMaterial": 37
+      "id":2,
+      "quantidadeMaterial":1,
+      "material":
+      {
+        "id" :3,
+        "tipoMaterial" : "Contrução",
+        "descricaoMaterial" : "Cimento Padrão Novo",
+        "tipoUnidade" : "Kg",
+        "valorUnidade" : 55.00
+      }
+
     }
   ],
-  "razaoSocialFornecedor": "Empresa da Savanna",
-  "emailFornecedor": "savanna.denega@hotmail.com"
+  "razaoSocialFornecedor":"Empresa da Savanna",
+  "emailFornecedor":"savanna.denega@hotmail.com"
 }

@@ -1,6 +1,6 @@
 {
   "nomeCompra" : "",
-  "dataCompra" : "28/11/1995",
+  "dataCompra" : "1995-11-18T14:00:00.000Z",
   "valorTotal" : 222.00,
   "estadoCompra" : "Finalizada",
   "ordemMaterial" : [
