@@ -32,12 +32,12 @@ public class ObraEntity implements Serializable{
     @NotBlank(message = "Não aceita status da obra em branco ou nulo.") //ja valida not null
     private String statusObra;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone ="GMT-03:00" )
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone ="GMT-03:00" )
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Não aceita data inicial em branco ou nulo.") //ja valida not null
     private Date dataInicial;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone ="GMT-03:00" )
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone ="GMT-03:00" )
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Não aceita previsao de término em branco ou nulo.") //ja valida not null
     private Date previsaoTermino;

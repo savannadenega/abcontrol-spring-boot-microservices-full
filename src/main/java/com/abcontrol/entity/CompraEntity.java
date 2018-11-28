@@ -13,6 +13,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.TimeZone;
 
+/**
+ * @author SavannaDenega
+ */
+
 @Entity
 @Table(name="TB_COMPRA")
 public class CompraEntity implements Serializable{
@@ -24,7 +28,7 @@ public class CompraEntity implements Serializable{
     @NotBlank(message = "Não aceita nome compra em branco ou nulo.") //ja valida not null
     private String nomeCompra;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "GMT-03:00")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone = "GMT-03:00")
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Não aceita data compra em branco ou nulo.")
     private Date dataCompra;

@@ -1,0 +1,24 @@
+{
+  "id" : 1,
+  "nomeProjeto": "Projeto 2",
+  "tipoProjeto": "Projeto para construcao",
+  "statusProjeto": "Em andamento",
+  "dataInicial": "2018-01-01T14:00:00.000Z",
+  "previsaoTermino": "2019-01-01T14:00:00.000Z",
+  "idProposta": 1,
+  "idOrcamento": 22,
+  "obras": [
+    {
+      "id": 2,
+      "nome": "Obra",
+      "tipoObra": "construcao",
+      "statusObra": "andamento",
+      "dataInicial": "2018-01-01T14:00:00.000Z",
+      "previsaoTermino": "2019-01-01T14:00:00.000Z"
+    }
+  ],
+  "idTarefa": 2,
+  "idEquipe": 3,
+  "idAnexo": 11
+
+}

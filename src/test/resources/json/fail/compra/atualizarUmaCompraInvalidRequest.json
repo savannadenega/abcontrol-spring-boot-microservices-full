@@ -1,7 +1,7 @@
 {
   "id":1,
   "nomeCompra":"Compra mensal",
-  "dataCompra":"18/11/2018",
+  "dataCompra":"2018-11-18T14:00:00.000Z",
   "valorTotal":2222.0,
   "estadoCompra":"Finalizada",
   "ordemMaterial":[

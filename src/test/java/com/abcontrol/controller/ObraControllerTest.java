@@ -75,10 +75,10 @@ public class ObraControllerTest {
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -115,10 +115,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -148,11 +148,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
-
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
 
@@ -178,10 +177,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -209,10 +208,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome(null);
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -239,10 +238,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção 2");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -271,10 +270,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);
@@ -301,10 +300,10 @@ public class ObraControllerTest {
         obraEntityResponse.setNome("Obra 1");
         obraEntityResponse.setTipoObra("Construção");
         obraEntityResponse.setStatusObra("Em andamento");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
-        Date date = simpleDateFormat.parse("01/01/2018");
-        Date date2 = simpleDateFormat.parse("01/01/2019");
+        Date date = simpleDateFormat.parse("2018-01-01T14:00:00.000Z");
+        Date date2 = simpleDateFormat.parse("2019-01-01T14:00:00.000Z");
 
         obraEntityResponse.setDataInicial(date);
         obraEntityResponse.setPrevisaoTermino(date2);

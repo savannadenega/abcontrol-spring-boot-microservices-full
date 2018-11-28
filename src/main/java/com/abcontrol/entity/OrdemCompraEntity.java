@@ -23,14 +23,15 @@ public class OrdemCompraEntity implements Serializable {
     // Relacao com Material
 
     @NotNull(message = "Não aceita id material em branco ou nulo.")
-    private long idMaterial;
+    @ManyToOne
+    private MaterialEntity material;
 
     public OrdemCompraEntity(){
     }
 
-    public OrdemCompraEntity(@NotNull(message = "Não aceita quantidadeMaterial em branco ou nulo.") int quantidadeMaterial, @NotNull(message = "Não aceita id material em branco ou nulo.") long idMaterial) {
+    public OrdemCompraEntity(@NotNull(message = "Não aceita quantidadeMaterial em branco ou nulo.") int quantidadeMaterial, @NotNull(message = "Não aceita id material em branco ou nulo.") MaterialEntity material) {
         this.quantidadeMaterial = quantidadeMaterial;
-        this.idMaterial = idMaterial;
+        this.material = material;
     }
 
     public Long getId() {
@@ -49,12 +50,12 @@ public class OrdemCompraEntity implements Serializable {
         this.quantidadeMaterial = quantidadeMaterial;
     }
 
-    public long getIdMaterial() {
-        return idMaterial;
+    public MaterialEntity getMaterial() {
+        return material;
     }
 
-    public void setIdMaterial(long idMaterial) {
-        this.idMaterial = idMaterial;
+    public void setMaterial(MaterialEntity material) {
+        this.material = material;
     }
 
 }
